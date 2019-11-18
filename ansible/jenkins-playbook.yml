@@ -1,0 +1,10 @@
+- hosts: all 
+  gather_facts: yes
+  become: yes
+  
+
+
+  tasks:
+  - name: Importing Jenkins role 
+    import_role:
+      name: jenkins
