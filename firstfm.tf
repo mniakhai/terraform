@@ -22,6 +22,9 @@ resource "google_compute_instance" "default" {
      access_config {
    }
  }
+  metadata = {
+    ssh-keys = "maksim_niakhai:${file("~/.ssh/id_rsa_gcp.pub")}"
+ }
   metadata_startup_script = "yum -y update; yum -y install epel-repo; yum -y update; yum -y install ansible"
 }
 
